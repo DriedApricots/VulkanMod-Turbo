@@ -1,0 +1,34 @@
+{
+  "schemaVersion": 1,
+  "id": "vulkanmodplus",
+  "version": "${version}",
+  "name": "VulkanMod+",
+  "description": "Unofficial fork of VulkanMod (by Collateral) for Minecraft 26.2: Vulkan renderer with extra optimizations, Sodium Extra style settings and bundled performance mods. Not affiliated with the VulkanMod project. LGPL-3.0.",
+  "authors": ["DriedApricots"],
+  "contributors": ["Collateral (VulkanMod)"],
+  "contact": {
+    "homepage": "https://github.com/DriedApricots/VulkanModPlus",
+    "sources": "https://github.com/DriedApricots/VulkanModPlus",
+    "issues": "https://github.com/DriedApricots/VulkanModPlus/issues"
+  },
+  "license": "LGPL-3.0-only",
+  "icon": "assets/vulkanmod/vlogo.png",
+  "environment": "client",
+  "provides": ["vulkanmod"],
+  "entrypoints": {
+    "client": ["net.vulkanmod.Initializer"]
+  },
+  "mixins": ["vulkanmod.mixins.json"],
+  "accessWidener": "vulkanmod.accesswidener",
+  "depends": {
+    "fabricloader": ">=0.17.0",
+    "minecraft": ">=26.2"
+  },
+  "breaks": {
+    "sodium": "*",
+    "iris": "*"
+  },
+  "custom": {
+    "fabric-renderer-api-v1:contains_renderer": true
+  }
+}

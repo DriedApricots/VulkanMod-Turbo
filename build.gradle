@@ -1,0 +1,84 @@
+// VulkanMod port to Minecraft 26.2 (LuxWorld). Based on VulkanMod 0.6.8 by xCollateral (LGPL-3.0).
+plugins {
+	id 'net.fabricmc.fabric-loom' version "${loom_version}"
+}
+
+version = project.mod_version
+group = project.maven_group
+base { archivesName = project.archives_base_name }
+
+loom {
+	accessWidenerPath = file("src/main/resources/vulkanmod.accesswidener")
+	// local test harness: gradlew runClient -PvkWorld=vktest joins run/saves/vktest directly
+	if (project.hasProperty('vkWorld')) {
+		runs { client { programArgs '--quickPlaySingleplayer', project.property('vkWorld') } }
+	}
+	// test harness only: -PvkJvm="-XX:StartFlightRecording=..." (space-separated JVM args)
+	if (project.hasProperty('vkJvm')) {
+		runs { client { vmArgs(*project.property('vkJvm').toString().split(' ')) } }
+	}
+}
+
+repositories {
+	mavenCentral()
+	maven { url = uri('libs-maven') }   // unmodified third-party mods bundled as jar-in-jar (see licenses/THIRD_PARTY.md)
+}
+
+// Bundled performance mods: compatible with the Vulkan renderer (logic/memory/window only, no chunk-mesh or buffer patches)
+def bundledMods = [
+	"lux.bundled:lithium:0.25.2_mc26.2",
+	"lux.bundled:ferritecore:9.0.0",
+	"lux.bundled:alternate-current:1.9.0",
+	"lux.bundled:clumps:26.2.1",
+	"lux.bundled:debugify:26.2.0.0",
+	"lux.bundled:dynamic_fps:3.11.9",
+	"lux.bundled:languagereload:1.7.7_26.2",
+	"lux.bundled:immediatelyfast:1.16.2_26.2",   // tested with the Vulkan renderer (GUI/text batching)
+	"lux.bundled:ixeris:4.5.2_26.2-fabric"       // tested: window events on the main thread, resize OK
+]
+
+def lwjglVersion = "3.4.1"
+def natives = ["natives-windows", "natives-linux", "natives-macos", "natives-macos-arm64"]
+
+dependencies {
+	minecraft "com.mojang:minecraft:${project.minecraft_version}"
+	implementation "net.fabricmc:fabric-loader:${project.loader_version}"
+	implementation "net.fabricmc.fabric-api:fabric-api:${project.fabric_api_version}"
+
+	["fabric-api-base", "fabric-resource-loader-v0", "fabric-resource-loader-v1", "fabric-rendering-v1", "fabric-renderer-api-v1",
+	 "fabric-rendering-fluids-v1", "fabric-block-getter-api-v2", "fabric-lifecycle-events-v1", "fabric-transitive-access-wideners-v1"].each {
+		include(fabricApi.module(it, project.fabric_api_version))
+	}
+
+	// Quilt 0.30.1 bundles MixinExtras 0.5.4, which crashes on Mixin-0.17 @Redirect annotations; ship 0.5.5 (newest wins)
+	include("io.github.llamalad7:mixinextras-fabric:0.5.5")
+	bundledMods.each { include(it); localRuntime(it) }
+	// test harness only: gradlew runClient -PvkExtra=lux.bundled:immediatelyfast:1.16.2_26.2 (not bundled)
+	if (project.hasProperty('vkExtra')) { project.property('vkExtra').toString().split(',').each { localRuntime(it) } }
+
+	include(implementation("org.lwjgl:lwjgl-vulkan:$lwjglVersion"))
+	["org.lwjgl:lwjgl-vma", "org.lwjgl:lwjgl-shaderc"].each { m ->
+		include(implementation("$m:$lwjglVersion"))
+		natives.each { n -> include(runtimeOnly("$m:$lwjglVersion:$n")) }
+	}
+	["natives-macos", "natives-macos-arm64"].each { n -> include(runtimeOnly("org.lwjgl:lwjgl-vulkan:$lwjglVersion:$n")) }
+}
+
+processResources {
+	def v = project.version
+	inputs.property "version", v
+	filesMatching("fabric.mod.json") { expand "version": v }
+}
+
+tasks.withType(JavaCompile).configureEach {
+	it.options.release = 25
+	it.options.encoding = "UTF-8"
+	it.options.compilerArgs += ['-Xmaxerrs', '5000', '-nowarn']
+}
+
+java {
+	sourceCompatibility = JavaVersion.VERSION_25
+	targetCompatibility = JavaVersion.VERSION_25
+}
+
+// LICENSE_VulkanMod is already in src/main/resources
