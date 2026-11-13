@@ -10,7 +10,7 @@ import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Redirect;
 
 /**
- * VulkanBoost: translucent immediate geometry (name tags, text backgrounds, translucent entities...) is depth sorted
+ * VulkanMod Turbo: translucent immediate geometry (name tags, text backgrounds, translucent entities...) is depth sorted
  * every frame with a comparator-driven merge sort. For the two standard sortings {@link FastSort} produces the identical
  * order with a primitive sort.
  */

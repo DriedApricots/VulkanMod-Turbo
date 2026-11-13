@@ -6,7 +6,7 @@ import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 
-/** VulkanBoost Extra: the floating book above enchanting tables. */
+/** VulkanMod Turbo Extra: the floating book above enchanting tables. */
 @Mixin(net.minecraft.client.renderer.blockentity.EnchantTableRenderer.class)
 public abstract class EnchantTableRendererM {
    @Inject(method = "submit", at = @At("HEAD"), cancellable = true)

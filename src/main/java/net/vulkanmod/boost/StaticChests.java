@@ -26,7 +26,7 @@ import org.joml.Matrix4f;
 import org.joml.Matrix4fStack;
 
 /**
- * VulkanBoost: closed chests (regular, trapped, ender, copper; single and double) were rebuilt vertex by vertex every
+ * VulkanMod Turbo: closed chests (regular, trapped, ender, copper; single and double) were rebuilt vertex by vertex every
  * frame through the entity model pipeline. Closed, not-being-broken chests are instead baked once per chunk section
  * into a GPU buffer and drawn with one draw call per section and render type, using vanilla's own render type
  * (same shader, textures, lighting, fog). The bake inputs (position, facing, type, material, light, model, sprite) are
@@ -163,7 +163,7 @@ public final class StaticChests {
                MeshData mesh = builder.build();
                if (mesh != null) {
                   try (mesh) {
-                     GpuBuffer buffer = RenderSystem.getDevice().createBuffer(() -> "VulkanMod+ static chests", GpuBuffer.USAGE_VERTEX, mesh.vertexBuffer());
+                     GpuBuffer buffer = RenderSystem.getDevice().createBuffer(() -> "VulkanMod Turbo static chests", GpuBuffer.USAGE_VERTEX, mesh.vertexBuffer());
                      this.batches.add(new Batch(renderType, buffer, mesh.drawState().indexCount()));
                   }
                }

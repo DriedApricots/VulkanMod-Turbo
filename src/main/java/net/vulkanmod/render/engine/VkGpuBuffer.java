@@ -21,7 +21,7 @@ public class VkGpuBuffer extends GpuBuffer {
    Buffer buffer;
    int offset;
    /**
-    * VulkanBoost: byte ranges read by draws, kept per frame for the last few frames. A write must not touch a range
+    * VulkanMod Turbo: byte ranges read by draws, kept per frame for the last few frames. A write must not touch a range
     * that a frame which is not finished on the GPU still reads: the current frame (draws already recorded) and the
     * previous frames that are still in flight (frame queue). Writes go through the transfer queue / mapped memory
     * immediately, i.e. "before" those draws execute; on a slow GPU the previous frame then drew with the new data
@@ -166,7 +166,7 @@ public class VkGpuBuffer extends GpuBuffer {
 
       boolean mappable = (usage & 1) != 0 | (usage & 2) != 0 | (usage & 4) != 0;
       if (!mappable) {
-         // VulkanBoost: device-local buffers are filled through staging copies (createBuffer(..., data) -> writeToBuffer),
+         // VulkanMod Turbo: device-local buffers are filled through staging copies (createBuffer(..., data) -> writeToBuffer),
          // even when vanilla doesn't ask for USAGE_COPY_DST (e.g. RenderSystem's sequential QUADS index buffer, usage=INDEX).
          // Without TRANSFER_DST the copy is invalid and the buffer stays zeroed -> End sky, sun and moon were invisible.
          vkUsage |= 2 | 1; // TRANSFER_DST + TRANSFER_SRC (SRC: orphaning copies the old contents, see orphanForWrite)
@@ -201,7 +201,7 @@ public class VkGpuBuffer extends GpuBuffer {
    }
 
    /**
-    * VulkanBoost: CommandEncoder.writeToBuffer is executed on the transfer queue right away, i.e. before the draws of
+    * VulkanMod Turbo: CommandEncoder.writeToBuffer is executed on the transfer queue right away, i.e. before the draws of
     * the current frame and while earlier frames may still be in flight. If such a frame reads the target range, give
     * this GpuBuffer another storage (old contents copied first in the same transfer command buffer, unless the write
     * replaces everything) so those draws keep the data they were recorded with - GL ordering semantics.
@@ -261,7 +261,7 @@ public class VkGpuBuffer extends GpuBuffer {
          throw new IllegalArgumentException("Cannot map " + length + " bytes at offset " + offset + " from a " + this.size() + " byte buffer");
       }
       if (writable && this.offset == 0 && this.buffer.getDataPtr() != 0L && this.usedByPendingFrame(offset, length)) {
-         // VulkanBoost: writing host memory that a draw of an unfinished frame (current or in flight) reads would
+         // VulkanMod Turbo: writing host memory that a draw of an unfinished frame (current or in flight) reads would
          // change that draw too (GL drivers orphan the storage here). Switch to another storage.
          Buffer old = this.swapStorage();
          if (offset != 0L || length < this.size()) {

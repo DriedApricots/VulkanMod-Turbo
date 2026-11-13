@@ -17,7 +17,7 @@ import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 
 /**
- * VulkanBoost: dropped items need their model bounding box every frame (hover offset). The render state is rebuilt
+ * VulkanMod Turbo: dropped items need their model bounding box every frame (hover offset). The render state is rebuilt
  * each frame, so vanilla recomputed it from every model vertex each time. The box only depends on the display context
  * and, per layer, on the (memoized) model extents, the item transform and the local transform, so it is cached by
  * exactly those.

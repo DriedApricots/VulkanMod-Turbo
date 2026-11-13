@@ -22,7 +22,7 @@ import org.spongepowered.asm.mixin.injection.Redirect;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 
 /**
- * VulkanBoost: F3 entries were recomputed every frame (string formatting, memory/chunk/entity statistics...).
+ * VulkanMod Turbo: F3 entries were recomputed every frame (string formatting, memory/chunk/entity statistics...).
  * At thousands of FPS that is a noticeable share of the frame, while the text can't visibly change faster than the
  * game ticks. Each entry's output is recorded and replayed; it is recomputed at most every {@link #REFRESH_NS}.
  */

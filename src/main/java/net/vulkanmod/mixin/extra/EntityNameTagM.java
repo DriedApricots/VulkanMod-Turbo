@@ -10,7 +10,7 @@ import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 
-/** VulkanBoost Extra: player / other entity name tags (server holograms made of named armor stands count as "other"). */
+/** VulkanMod Turbo Extra: player / other entity name tags (server holograms made of named armor stands count as "other"). */
 @Mixin(EntityRenderer.class)
 public abstract class EntityNameTagM<T extends Entity, S extends EntityRenderState> {
    @Inject(method = "extractNameTags(Lnet/minecraft/world/entity/Entity;Lnet/minecraft/client/renderer/entity/state/EntityRenderState;FDD)V", at = @At("TAIL"))

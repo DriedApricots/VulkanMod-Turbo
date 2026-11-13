@@ -10,7 +10,7 @@ import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 
-/** VulkanBoost Extra: hide rain / snow columns (the sounds and gameplay are unchanged). */
+/** VulkanMod Turbo Extra: hide rain / snow columns (the sounds and gameplay are unchanged). */
 @Mixin(WeatherEffectRenderer.class)
 public abstract class WeatherEffectRendererM {
    @Inject(method = "extractRenderState", at = @At("HEAD"), cancellable = true)

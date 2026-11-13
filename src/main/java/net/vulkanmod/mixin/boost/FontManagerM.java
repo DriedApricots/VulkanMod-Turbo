@@ -7,7 +7,7 @@ import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 
-/** VulkanBoost: cached text layouts reference baked glyphs; drop them when fonts are reloaded. */
+/** VulkanMod Turbo: cached text layouts reference baked glyphs; drop them when fonts are reloaded. */
 @Mixin(FontManager.class)
 public abstract class FontManagerM {
    @Inject(method = "apply", at = @At("HEAD"))

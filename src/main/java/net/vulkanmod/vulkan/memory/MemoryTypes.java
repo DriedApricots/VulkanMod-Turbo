@@ -16,7 +16,7 @@ public class MemoryTypes {
    private static MemoryType hostReadback;
 
    /**
-    * VulkanBoost: host memory for buffers the CPU reads (screenshots, GPU readbacks). Plain HOST_MEM is uncached, and
+    * VulkanMod Turbo: host memory for buffers the CPU reads (screenshots, GPU readbacks). Plain HOST_MEM is uncached, and
     * CPU reads from it are very slow (a 1440p screenshot took ~330 ms to read); HOST_CACHED is preferred here.
     */
    public static MemoryType hostReadback() {

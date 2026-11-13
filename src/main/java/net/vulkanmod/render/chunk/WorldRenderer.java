@@ -195,7 +195,7 @@ public class WorldRenderer {
          this.sectionGraph.update(camera, frustum, spectator);
       }
 
-      this.sectionGraph.retryPendingRebuilds(); // VulkanBoost: see SectionGraph.scheduleRebuilds
+      this.sectionGraph.retryPendingRebuilds(); // VulkanMod Turbo: see SectionGraph.scheduleRebuilds
 
       this.indirectBuffers[Renderer.getCurrentFrame()].reset();
       mcProfiler.pop();
@@ -287,7 +287,7 @@ public class WorldRenderer {
       this.onAllChangedCallbacks.clear();
    }
 
-   // ------------------------------------------------------------------ VulkanMod+ GPU occlusion culling
+   // ------------------------------------------------------------------ VulkanMod Turbo GPU occlusion culling
    private static final int MAX_LAYERS = TerrainRenderType.VALUES.length;
    /** per layer: areas drawn and their command ranges in the culled command buffer of this frame */
    private final ChunkArea[][] culledAreas = new ChunkArea[MAX_LAYERS][];
@@ -730,7 +730,7 @@ public class WorldRenderer {
    }
 
    /**
-    * VulkanBoost entity culling: a box is visible when any render section it overlaps was reached by the
+    * VulkanMod Turbo entity culling: a box is visible when any render section it overlaps was reached by the
     * section graph during its last update (occlusion BFS). Unknown/out-of-grid sections count as visible.
     */
    public boolean isBoxGraphVisible(net.minecraft.world.phys.AABB box) {

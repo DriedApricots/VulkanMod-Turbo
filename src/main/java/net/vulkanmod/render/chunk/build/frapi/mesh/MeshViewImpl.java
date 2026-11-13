@@ -47,7 +47,7 @@ public class MeshViewImpl implements MeshView {
 
    public void outputTo(QuadEmitter emitter) {
       if (!(emitter instanceof MutableQuadViewImpl)) {
-         // VulkanBoost: foreign emitter (e.g. Indigo's feature renderers for 26.2 FRAPI submits) - copy through the public API
+         // VulkanMod Turbo: foreign emitter (e.g. Indigo's feature renderers for 26.2 FRAPI submits) - copy through the public API
          this.forEach(quad -> copyToForeign(quad, emitter));
          return;
       }

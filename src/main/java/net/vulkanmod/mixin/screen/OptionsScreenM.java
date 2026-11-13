@@ -25,7 +25,7 @@ public class OptionsScreenM extends Screen {
       super(title);
    }
 
-   // VulkanBoost: the lambda index changes between game versions (in 26.2 "$2" is Music & Sounds, video is "$3"),
+   // VulkanMod Turbo: the lambda index changes between game versions (in 26.2 "$2" is Music & Sounds, video is "$3"),
    // so match whichever init lambda creates the vanilla VideoSettingsScreen instead of a fixed index.
    @Inject(
       method = {"lambda$init$1", "lambda$init$2", "lambda$init$3", "lambda$init$4", "lambda$init$5", "lambda$init$6", "lambda$init$7", "lambda$init$8", "lambda$init$9", "lambda$init$10"},

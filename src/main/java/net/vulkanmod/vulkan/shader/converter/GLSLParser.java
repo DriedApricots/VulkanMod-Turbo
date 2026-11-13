@@ -315,7 +315,7 @@ public class GLSLParser {
    }
 
    private UniformBlock.Field parseUniformField() {
-      // VulkanBoost: tolerate redundant member qualifiers (e.g. Xaero's `uniform float DiscardAlpha;` inside a block)
+      // VulkanMod Turbo: tolerate redundant member qualifiers (e.g. Xaero's `uniform float DiscardAlpha;` inside a block)
       while (this.currentToken.type == Token.TokenType.IDENTIFIER
          && java.util.Set.of("uniform", "highp", "mediump", "lowp", "flat").contains(this.currentToken.value)) {
          this.advanceToken(true);

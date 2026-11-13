@@ -26,7 +26,7 @@ import org.lwjgl.vulkan.VkSwapchainCreateInfoKHR;
 import org.lwjgl.vulkan.VkSurfaceFormatKHR.Buffer;
 
 public class SwapChain extends Framebuffer {
-   // VulkanBoost: prefer MAILBOX for uncapped FPS. IMMEDIATE tears in windowed mode too (vanilla GL goes through the
+   // VulkanMod Turbo: prefer MAILBOX for uncapped FPS. IMMEDIATE tears in windowed mode too (vanilla GL goes through the
    // compositor and does not); at a few thousand FPS the tears are invisible, at 40-100 FPS on weaker GPUs they made the
    // camera look jerky when turning. MAILBOX is just as uncapped but always shows whole frames.
    private static final int defUncappedMode = checkPresentMode(1, 0);
@@ -225,7 +225,7 @@ public class SwapChain extends Framebuffer {
    @Override
    public void cleanUp() {
       VkDevice device = Vulkan.getVkDevice();
-      // VulkanBoost: with a 0x0 surface (minimized at exit) the swapchain, its views and the depth image are gone already
+      // VulkanMod Turbo: with a 0x0 surface (minimized at exit) the swapchain, its views and the depth image are gone already
       if (this.swapChainId != 0L) {
          KHRSwapchain.vkDestroySwapchainKHR(device, this.swapChainId, null);
          this.swapChainImages.forEach(image -> VK10.vkDestroyImageView(device, image.getImageView(), null));

@@ -15,7 +15,7 @@ import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 
 /**
- * VulkanBoost Extra: remove the distance / atmospheric fog in air. Fog under water, in lava, in powder snow and the
+ * VulkanMod Turbo Extra: remove the distance / atmospheric fog in air. Fog under water, in lava, in powder snow and the
  * blindness / darkness effects are kept, since they are gameplay.
  */
 @Mixin(FogRenderer.class)

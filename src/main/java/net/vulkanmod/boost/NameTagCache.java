@@ -8,7 +8,7 @@ import net.minecraft.network.chat.Component;
 import net.vulkanmod.Initializer;
 
 /**
- * VulkanBoost: name tags (and server holograms made of named armor stands) get a brand-new Component every frame
+ * VulkanMod Turbo: name tags (and server holograms made of named armor stands) get a brand-new Component every frame
  * (Entity.getDisplayName()). Everything vanilla caches per component instance - the bidi visual order, and the width
  * used to centre the tag - was therefore recomputed every frame for every tag (about a third of the frame with 400
  * holograms). Equal components are mapped to one canonical instance, so those caches work again, and the width is

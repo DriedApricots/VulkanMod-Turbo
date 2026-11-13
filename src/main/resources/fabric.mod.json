@@ -1,15 +1,15 @@
 {
   "schemaVersion": 1,
-  "id": "vulkanmodplus",
+  "id": "vulkanmodturbo",
   "version": "${version}",
-  "name": "VulkanMod+",
+  "name": "VulkanMod Turbo",
   "description": "Unofficial fork of VulkanMod (by Collateral) for Minecraft 26.2: Vulkan renderer with extra optimizations, Sodium Extra style settings and bundled performance mods. Not affiliated with the VulkanMod project. LGPL-3.0.",
   "authors": ["DriedApricots"],
   "contributors": ["Collateral (VulkanMod)"],
   "contact": {
-    "homepage": "https://github.com/DriedApricots/VulkanModPlus",
-    "sources": "https://github.com/DriedApricots/VulkanModPlus",
-    "issues": "https://github.com/DriedApricots/VulkanModPlus/issues"
+    "homepage": "https://github.com/DriedApricots/VulkanMod-Turbo",
+    "sources": "https://github.com/DriedApricots/VulkanMod-Turbo",
+    "issues": "https://github.com/DriedApricots/VulkanMod-Turbo/issues"
   },
   "license": "LGPL-3.0-only",
   "icon": "assets/vulkanmod/vlogo.png",

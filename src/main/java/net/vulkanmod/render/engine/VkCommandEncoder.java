@@ -76,7 +76,7 @@ public class VkCommandEncoder implements CommandEncoderBackend {
    private RenderPipeline lastPipeline;
 
    /**
-    * VulkanBoost: the real screen target is VulkanMod's main pass attachment. Mods like Xaero's Minimap temporarily make
+    * VulkanMod Turbo: the real screen target is VulkanMod's main pass attachment. Mods like Xaero's Minimap temporarily make
     * their own framebuffer the game's "main render target"; comparing with mainRenderTarget() then sent their offscreen
     * drawing to the screen.
     */
@@ -397,7 +397,7 @@ public class VkCommandEncoder implements CommandEncoderBackend {
          }
 
          if (vkGpuBuffer.offset == 0 && !vkGpuBuffer.buffer.type.mappable() && vkGpuBuffer.usedByPendingFrame(dstOffset, size)) {
-            vkGpuBuffer.orphanForWrite(commandBuffer.handle, stack, dstOffset, size); // VulkanBoost: keep GL write/draw ordering
+            vkGpuBuffer.orphanForWrite(commandBuffer.handle, stack, dstOffset, size); // VulkanMod Turbo: keep GL write/draw ordering
          }
 
          Buffer barrier = VkMemoryBarrier.calloc(1, stack);
@@ -640,7 +640,7 @@ public class VkCommandEncoder implements CommandEncoderBackend {
       if (this.inRenderPass) {
          throw new IllegalStateException("Close the existing render pass before performing additional commands");
       } else {
-         // VulkanBoost: a real fence. The stub reported completion immediately, so vanilla recycled vertex buffers
+         // VulkanMod Turbo: a real fence. The stub reported completion immediately, so vanilla recycled vertex buffers
          // (StagedVertexBuffer) and ring buffers (MappableRingBuffer) while the GPU still drew the previous frame from
          // them: models flashing as huge cubes, a shaking hand/GUI - only on GPUs slower than the CPU.
          final long serial = Renderer.fenceSerial();

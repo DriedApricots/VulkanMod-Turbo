@@ -14,7 +14,7 @@ import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Redirect;
 
 /**
- * VulkanBoost: Particle.getLightCoords uses the particle's tick position (not the interpolated one), yet it looked up the
+ * VulkanMod Turbo: Particle.getLightCoords uses the particle's tick position (not the interpolated one), yet it looked up the
  * block state and light of that position every frame for every particle (~30% of the frame with many particles).
  * The base lookup is cached per particle and redone when the block position or the game tick changes. Subclasses
  * (flames, glow, lava...) still apply their own emission on top every frame, exactly as before.

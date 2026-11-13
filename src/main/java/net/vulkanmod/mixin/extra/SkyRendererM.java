@@ -7,7 +7,7 @@ import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 
-/** VulkanBoost Extra: sky, sun, moon and stars switches. */
+/** VulkanMod Turbo Extra: sky, sun, moon and stars switches. */
 @Mixin(SkyRenderer.class)
 public abstract class SkyRendererM {
    @Inject(method = {"renderSkyDisc", "renderSunriseAndSunset", "renderDarkDisc"}, at = @At("HEAD"), cancellable = true)

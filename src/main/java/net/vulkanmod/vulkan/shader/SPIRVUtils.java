@@ -60,9 +60,9 @@ public class SPIRVUtils {
    }
 
    /**
-    * VulkanBoost: compiled SPIR-V is cached on disk (.minecraft/vulkanboost-cache/spirv), keyed by a SHA-256 of the
+    * VulkanMod Turbo: compiled SPIR-V is cached on disk (.minecraft/vulkanmodturbo-cache/spirv), keyed by a SHA-256 of the
     * full source, shader kind, file name and mod version, so unchanged shaders are not recompiled on every launch or
-    * resource reload. Any change of the source (resource packs, other mods, a new VulkanBoost version) is a new key.
+    * resource reload. Any change of the source (resource packs, other mods, a new VulkanMod Turbo version) is a new key.
     */
    public static SPIRVUtils.SPIRV compileShader(String filename, String source, SPIRVUtils.ShaderKind shaderKind) {
       if (source == null) {

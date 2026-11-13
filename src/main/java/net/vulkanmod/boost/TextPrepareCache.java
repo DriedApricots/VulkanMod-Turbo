@@ -9,7 +9,7 @@ import net.minecraft.util.FormattedCharSequence;
 import net.vulkanmod.Initializer;
 
 /**
- * VulkanBoost: world text (name tags, holograms, signs, text displays) was laid out from scratch every frame:
+ * VulkanMod Turbo: world text (name tags, holograms, signs, text displays) was laid out from scratch every frame:
  * code point decoding, glyph lookup per character, glyph instance creation. A {@link Font.PreparedText} is position
  * relative (the pose is applied when its glyphs are emitted), so it is cached per text object + layout parameters.
  * <ul>

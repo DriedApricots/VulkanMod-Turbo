@@ -42,7 +42,7 @@ public class DebugEntrySystemSpecsM {
             ),
             gpuDevice.getDeviceInfo().name(),
             String.format(Locale.ROOT, "%s %s", gpuDevice.getDeviceInfo().backendName(), gpuDevice.getDeviceInfo().driverInfo()),
-            String.format(Locale.ROOT, "VulkanMod+ %s", Initializer.getVersion())
+            String.format(Locale.ROOT, "VulkanMod Turbo %s", Initializer.getVersion())
          )
       );
       ci.cancel();

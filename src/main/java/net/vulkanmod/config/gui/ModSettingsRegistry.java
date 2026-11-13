@@ -14,7 +14,7 @@ public class ModSettingsRegistry {
 
    ModSettingsRegistry() {
       ModSettingsEntry vulkanModSettings = new ModSettingsEntry(
-         Component.literal("VulkanMod+").withStyle(ChatFormatting.DARK_RED),
+         Component.literal("VulkanMod Turbo").withStyle(ChatFormatting.DARK_RED),
          () -> Identifier.fromNamespaceAndPath("vulkanmod", "vlogo_transparent.png"),
          Options::getOptionPages,
          () -> Initializer.CONFIG.write()

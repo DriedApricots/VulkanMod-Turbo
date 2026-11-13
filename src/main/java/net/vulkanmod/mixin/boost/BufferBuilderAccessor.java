@@ -5,7 +5,7 @@ import com.mojang.blaze3d.vertex.VertexFormatElement;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.gen.Accessor;
 
-/** VulkanBoost: raw vertex writes for baked name tags (see NameTagBake). */
+/** VulkanMod Turbo: raw vertex writes for baked name tags (see NameTagBake). */
 @Mixin(BufferBuilder.class)
 public interface BufferBuilderAccessor {
    @Accessor("vertexPointer")

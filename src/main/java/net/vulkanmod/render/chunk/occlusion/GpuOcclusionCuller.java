@@ -16,7 +16,7 @@ import org.lwjgl.system.MemoryUtil;
 import org.lwjgl.vulkan.*;
 
 /**
- * VulkanMod+: GPU occlusion culling of chunk sections, a Vulkan re-implementation of the temporal occlusion scheme of
+ * VulkanMod Turbo: GPU occlusion culling of chunk sections, a Vulkan re-implementation of the temporal occlusion scheme of
  * Nvidium by MCRcortex (https://github.com/MCRcortex/nvidium, LGPL-3.0). Nvidium is OpenGL + NVIDIA-only (mesh shaders,
  * bindless); this version uses only core Vulkan 1.2 features (multi draw indirect, fragment stores), so it runs on any
  * GPU VulkanMod supports, including old ones without mesh shaders.
@@ -106,9 +106,9 @@ public final class GpuOcclusionCuller {
       this.boxBuffers = new Buffer[frames];
 
       for (int i = 0; i < frames; i++) {
-         this.cmdBuffers[i] = new Buffer("VulkanMod+ culled indirect", VK10.VK_BUFFER_USAGE_INDIRECT_BUFFER_BIT | VK10.VK_BUFFER_USAGE_STORAGE_BUFFER_BIT, MemoryTypes.HOST_MEM);
+         this.cmdBuffers[i] = new Buffer("VulkanMod Turbo culled indirect", VK10.VK_BUFFER_USAGE_INDIRECT_BUFFER_BIT | VK10.VK_BUFFER_USAGE_STORAGE_BUFFER_BIT, MemoryTypes.HOST_MEM);
          this.cmdBuffers[i].createBuffer(256L * 1024L);
-         this.boxBuffers[i] = new Buffer("VulkanMod+ section boxes", VK10.VK_BUFFER_USAGE_STORAGE_BUFFER_BIT, MemoryTypes.HOST_MEM);
+         this.boxBuffers[i] = new Buffer("VulkanMod Turbo section boxes", VK10.VK_BUFFER_USAGE_STORAGE_BUFFER_BIT, MemoryTypes.HOST_MEM);
          this.boxBuffers[i].createBuffer(64L * 1024L);
       }
 
@@ -157,7 +157,7 @@ public final class GpuOcclusionCuller {
             this.visBuffer.scheduleFree();
          }
          this.visSections = sectionCount;
-         this.visBuffer = new Buffer("VulkanMod+ section visibility", VK10.VK_BUFFER_USAGE_STORAGE_BUFFER_BIT | VK10.VK_BUFFER_USAGE_TRANSFER_DST_BIT, MemoryTypes.GPU_MEM);
+         this.visBuffer = new Buffer("VulkanMod Turbo section visibility", VK10.VK_BUFFER_USAGE_STORAGE_BUFFER_BIT | VK10.VK_BUFFER_USAGE_TRANSFER_DST_BIT, MemoryTypes.GPU_MEM);
          this.visBuffer.createBuffer(Math.max(4L, sectionCount * 4L));
          this.visNeedsClear = true;
       }

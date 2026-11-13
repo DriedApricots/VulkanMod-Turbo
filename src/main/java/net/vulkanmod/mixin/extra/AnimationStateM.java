@@ -10,7 +10,7 @@ import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 
-/** VulkanBoost Extra: per-kind texture animation switches (water, lava, fire, portal, everything else). */
+/** VulkanMod Turbo Extra: per-kind texture animation switches (water, lava, fire, portal, everything else). */
 @Mixin(SpriteContents.AnimationState.class)
 public abstract class AnimationStateM implements AnimationKind {
    @Unique private int vb$kind = AnimationKind.OTHER;

@@ -8,7 +8,7 @@ import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 
-/** VulkanBoost Extra: tags each animation state with the kind of its sprite (see AnimationStateM). */
+/** VulkanMod Turbo Extra: tags each animation state with the kind of its sprite (see AnimationStateM). */
 @Mixin(SpriteContents.class)
 public abstract class SpriteContentsAnimM {
    @Inject(method = "createAnimationState", at = @At("RETURN"))

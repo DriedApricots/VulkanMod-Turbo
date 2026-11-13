@@ -90,7 +90,7 @@ public class MemoryManager {
       this.createBuffer(size, usage, properties, 0, pBuffer, pBufferMemory);
    }
 
-   /** VulkanBoost: preferredProperties lets VMA pick e.g. HOST_CACHED memory for buffers the CPU reads back. */
+   /** VulkanMod Turbo: preferredProperties lets VMA pick e.g. HOST_CACHED memory for buffers the CPU reads back. */
    public void createBuffer(long size, int usage, int properties, int preferredProperties, LongBuffer pBuffer, PointerBuffer pBufferMemory) {
       MemoryStack stack = MemoryStack.stackPush();
 

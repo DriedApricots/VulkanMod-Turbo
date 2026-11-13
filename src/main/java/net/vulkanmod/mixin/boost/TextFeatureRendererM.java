@@ -8,7 +8,7 @@ import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Redirect;
 
-/** VulkanBoost: world text (signs, text displays...) layout is cached (see {@link TextPrepareCache}). */
+/** VulkanMod Turbo: world text (signs, text displays...) layout is cached (see {@link TextPrepareCache}). */
 @Mixin(TextFeatureRenderer.class)
 public abstract class TextFeatureRendererM {
    @Redirect(

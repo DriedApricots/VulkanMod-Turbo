@@ -1,9 +1,9 @@
-# VulkanMod+ — licences
+# VulkanMod Turbo — licences
 
-VulkanMod+ is an unofficial fork of **VulkanMod** by Collateral (https://github.com/xCollateral/VulkanMod) for Minecraft 26.2,
-with fixes and additions. VulkanMod and therefore VulkanMod+ are licensed under the
-**GNU Lesser General Public License v3.0** (see LICENSE-VulkanMod.txt). The full source code of VulkanMod+ is available at
-https://github.com/DriedApricots/VulkanModPlus
+VulkanMod Turbo is an unofficial fork of **VulkanMod** by Collateral (https://github.com/xCollateral/VulkanMod) for Minecraft 26.2,
+with fixes and additions. VulkanMod and therefore VulkanMod Turbo are licensed under the
+**GNU Lesser General Public License v3.0** (see LICENSE-VulkanMod.txt). The full source code of VulkanMod Turbo is available at
+https://github.com/DriedApricots/VulkanMod-Turbo
 
 ## Code based on other projects
 

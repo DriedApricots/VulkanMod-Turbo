@@ -10,7 +10,7 @@ import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.ModifyVariable;
 import org.spongepowered.asm.mixin.injection.Redirect;
 
-/** VulkanBoost: canonical name tag components + cached widths (see {@link NameTagCache}). */
+/** VulkanMod Turbo: canonical name tag components + cached widths (see {@link NameTagCache}). */
 @Mixin(SubmitNodeCollection.class)
 public abstract class SubmitNodeCollectionNameTagM {
    @ModifyVariable(method = "submitNameTag", at = @At("HEAD"), argsOnly = true)

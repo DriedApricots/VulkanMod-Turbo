@@ -21,7 +21,7 @@ import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 
-/** VulkanBoost: closed chests go to {@link StaticChests} instead of being rebuilt every frame. */
+/** VulkanMod Turbo: closed chests go to {@link StaticChests} instead of being rebuilt every frame. */
 @Mixin(ChestRenderer.class)
 public abstract class ChestRendererM {
    @Shadow @Final private SpriteGetter sprites;

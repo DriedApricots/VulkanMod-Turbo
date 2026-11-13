@@ -43,7 +43,7 @@ public abstract class Options {
       optionPages.add(page);
       page = new OptionPage(Component.translatable("vulkanmod.options.pages.other").getString(), getOtherOpts());
       optionPages.add(page);
-      // VulkanBoost Extra pages (Sodium Extra style)
+      // VulkanMod Turbo Extra pages (Sodium Extra style)
       for (String key : new String[]{"animations", "particles", "details", "render", "extra"}) {
          page = new OptionPage(Component.translatable("vulkanmod.options.pages." + key).getString(), switch (key) {
             case "animations" -> getAnimationOpts();
@@ -483,7 +483,7 @@ public abstract class Options {
       };
    }
 
-   // ---- VulkanBoost Extra pages ----
+   // ---- VulkanMod Turbo Extra pages ----
 
    private static SwitchOption sw(String key, java.util.function.Consumer<Boolean> set, java.util.function.Supplier<Boolean> get) {
       SwitchOption o = new SwitchOption(Component.translatable("vulkanmod.options.extra." + key), set, get);

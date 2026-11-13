@@ -12,7 +12,7 @@ import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 
 /**
- * VulkanBoost TPS compensation for item use (players only): eating, drinking, drawing bows/crossbows/tridents/spears.
+ * VulkanMod Turbo TPS compensation for item use (players only): eating, drinking, drawing bows/crossbows/tridents/spears.
  * The remaining use time is shortened by the measured lag, but vanilla always performs the final decrement itself,
  * so completion still goes through the normal code path. Brushes, horns, spyglasses etc. are left untouched.
  */

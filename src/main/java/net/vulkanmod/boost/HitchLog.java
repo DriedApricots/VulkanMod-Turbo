@@ -6,12 +6,12 @@ import java.util.List;
 import net.vulkanmod.Initializer;
 
 /**
- * Diagnostics, off by default: with -Dvulkanboost.hitchlog=true every frame longer than 50 ms is logged as
- * "VBHITCH" together with the JVM uptime (to line it up with a JFR recording) and what VulkanBoost did since the
+ * Diagnostics, off by default: with -Dvulkanmodturbo.hitchlog=true every frame longer than 50 ms is logged as
+ * "VBHITCH" together with the JVM uptime (to line it up with a JFR recording) and what VulkanMod Turbo did since the
  * previous frame (sign / chest section rebakes, shader compiles, GC). Costs one nanoTime call per frame when on.
  */
 public final class HitchLog {
-   private static final boolean ENABLED = Boolean.getBoolean("vulkanmodplus.hitchlog");
+   private static final boolean ENABLED = Boolean.getBoolean("vulkanmodturbo.hitchlog");
    private static final long THRESHOLD_NS = 50_000_000L;
    private static final int MAX_LINES = 2000;
 

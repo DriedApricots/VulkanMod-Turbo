@@ -7,7 +7,7 @@ import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 
-/** VulkanBoost Extra: block destroy / block cracking particles. */
+/** VulkanMod Turbo Extra: block destroy / block cracking particles. */
 @Mixin(ClientLevel.class)
 public abstract class ClientLevelParticlesM {
    @Inject(method = "addDestroyBlockEffect", at = @At("HEAD"), cancellable = true)

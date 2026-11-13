@@ -16,7 +16,7 @@ import org.joml.Matrix4f;
 import org.joml.Matrix4fc;
 
 /**
- * VulkanBoost: name tags / holograms were turned into glyph vertices every frame (glyph visiting, per-glyph builder
+ * VulkanMod Turbo: name tags / holograms were turned into glyph vertices every frame (glyph visiting, per-glyph builder
  * lookup, per-vertex glyph math) although only their pose (facing the camera) and light change. A laid-out text
  * (cached by {@link TextPrepareCache}) is recorded once through the normal glyph code into local-space vertex runs
  * - one run per consecutive render type, so draw order is unchanged - and replayed every frame with the tag's pose

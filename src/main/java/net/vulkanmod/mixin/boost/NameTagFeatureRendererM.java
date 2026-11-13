@@ -13,13 +13,13 @@ import org.spongepowered.asm.mixin.Overwrite;
 import org.spongepowered.asm.mixin.Unique;
 
 /**
- * VulkanBoost: name tag / hologram text layout is cached (see {@link TextPrepareCache}) and its glyph vertices are
+ * VulkanMod Turbo: name tag / hologram text layout is cached (see {@link TextPrepareCache}) and its glyph vertices are
  * baked once per text and replayed with the tag's pose (see {@link NameTagBake}).
  */
 @Mixin(NameTagFeatureRenderer.class)
 public abstract class NameTagFeatureRendererM extends RenderTypeFeatureRenderer<NameTagFeatureRenderer.Submit> {
    /**
-    * @author VulkanBoost
+    * @author VulkanMod Turbo
     * @reason cache the layout per name component instead of redoing it every frame
     */
    @Overwrite
@@ -32,7 +32,7 @@ public abstract class NameTagFeatureRendererM extends RenderTypeFeatureRenderer<
    }
 
    /**
-    * @author VulkanBoost
+    * @author VulkanMod Turbo
     * @reason replay baked glyph vertices for unchanged texts instead of rebuilding them every frame
     */
    @Overwrite

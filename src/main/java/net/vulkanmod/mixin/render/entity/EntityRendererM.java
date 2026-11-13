@@ -15,7 +15,7 @@ import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 
 /**
- * VulkanBoost entity culling (replaces the upstream centre-point check).
+ * VulkanMod Turbo entity culling (replaces the upstream centre-point check).
  * After vanilla frustum culling accepted an entity, hide it when every render section its box overlaps
  * was left unreached by the occlusion graph. Never culled: renderers that opt out of culling, glowing
  * entities (visible through walls), leashed entities and anything the local player rides.
@@ -34,7 +34,7 @@ public abstract class EntityRendererM<T extends Entity> {
          return;
       }
 
-      // VulkanBoost Extra: item frames, paintings, visible armor stands. Invisible / marker armor stands are kept:
+      // VulkanMod Turbo Extra: item frames, paintings, visible armor stands. Invisible / marker armor stands are kept:
       // servers build holograms from them, and hiding them would hide the hologram text too.
       net.vulkanmod.config.Config cfg = Initializer.CONFIG;
       if (!cfg.itemFrames && entity instanceof net.minecraft.world.entity.decoration.ItemFrame
@@ -44,7 +44,7 @@ public abstract class EntityRendererM<T extends Entity> {
          return;
       }
 
-      // VulkanBoost optional distance limits (0 = off): dropped items / mobs. Players, bosses, glowing, named and
+      // VulkanMod Turbo optional distance limits (0 = off): dropped items / mobs. Players, bosses, glowing, named and
       // ridden/leashed entities are never hidden by distance.
       int itemDist = Initializer.CONFIG.itemRenderDistance, mobDist = Initializer.CONFIG.mobRenderDistance;
       if (itemDist > 0 || mobDist > 0) {

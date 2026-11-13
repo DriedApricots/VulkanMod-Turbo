@@ -1,4 +1,4 @@
-# VulkanMod+
+# VulkanMod Turbo
 
 An unofficial fork of [VulkanMod](https://github.com/xCollateral/VulkanMod) by **Collateral** for new Minecraft versions (Fabric; 26.2 now, 26.3 in progress):
 the Vulkan renderer with extra optimizations, Sodium Extra style settings and bundled performance mods.
@@ -28,7 +28,7 @@ Language Reload, ImmediatelyFast, Ixeris. See `src/main/resources/licenses/THIRD
 
 ## Benchmark (integrated AMD GPU, 16 chunks)
 
-| Scene | VulkanMod port | VulkanMod+ |
+| Scene | VulkanMod port | VulkanMod Turbo |
 |---|---|---|
 | Empty platform | 116 FPS (1% low 98) | 137 FPS (119) |
 | 3072 chests | 76 (57) | 86 (77) |

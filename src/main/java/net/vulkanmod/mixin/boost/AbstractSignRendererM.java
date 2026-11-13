@@ -21,7 +21,7 @@ import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.Redirect;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 
-/** VulkanBoost: sign text lines go to {@link StaticSignText} (baked per section) instead of the per-frame text path. */
+/** VulkanMod Turbo: sign text lines go to {@link StaticSignText} (baked per section) instead of the per-frame text path. */
 @Mixin(AbstractSignRenderer.class)
 public abstract class AbstractSignRendererM {
    @Unique private static final IdentityHashMap<FormattedCharSequence, Boolean> VB_OBFUSCATED = new IdentityHashMap<>();

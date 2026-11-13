@@ -8,7 +8,7 @@ import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 
-// VulkanBoost TPS compensation: measure real time per server tick (integrated server only, the mod is client-side)
+// VulkanMod Turbo TPS compensation: measure real time per server tick (integrated server only, the mod is client-side)
 @Mixin(MinecraftServer.class)
 public abstract class MinecraftServerLagM {
    @Inject(method = "tickServer", at = @At("HEAD"))

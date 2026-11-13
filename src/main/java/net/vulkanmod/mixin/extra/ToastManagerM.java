@@ -13,7 +13,7 @@ import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 
-/** VulkanBoost Extra: advancement / recipe / tutorial / music toasts. System toasts (errors, warnings) always show. */
+/** VulkanMod Turbo Extra: advancement / recipe / tutorial / music toasts. System toasts (errors, warnings) always show. */
 @Mixin(ToastManager.class)
 public abstract class ToastManagerM {
    @Inject(method = "addToast", at = @At("HEAD"), cancellable = true)

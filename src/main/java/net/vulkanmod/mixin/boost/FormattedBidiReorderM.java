@@ -11,7 +11,7 @@ import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 
 /**
- * VulkanBoost: every piece of GUI text (F3, chat, scoreboard, tooltips...) went through ICU Bidi + ArabicShaping every
+ * VulkanMod Turbo: every piece of GUI text (F3, chat, scoreboard, tooltips...) went through ICU Bidi + ArabicShaping every
  * frame. With a left-to-right base direction and no character from U+0590 upwards (Hebrew, Arabic, RTL marks and other
  * RTL/shaping scripts start there) the result is always a single non-reversed run, i.e. the text in logical order -
  * so build exactly that without running the bidi algorithm.

@@ -39,7 +39,7 @@ public class DefaultMainPass implements MainPass {
    private void createResources() {
       if (this.mainFramebuffer != null) {
          if (this.mainFramebuffer != Renderer.getInstance().getSwapChain()) {
-            // VulkanBoost: the off-screen stand-in (minimized window) may still be referenced by commands of this
+            // VulkanMod Turbo: the off-screen stand-in (minimized window) may still be referenced by commands of this
             // frame (textures fetched before the frame started); free it once this frame slot has completed
             Framebuffer old = this.mainFramebuffer;
             net.vulkanmod.vulkan.memory.MemoryManager.getInstance().addFrameOp(() -> old.cleanUp(true));
@@ -53,7 +53,7 @@ public class DefaultMainPass implements MainPass {
       if (Renderer.getInstance().getSwapChain().hasImages() && !Renderer.isForceOffscreen()) {
          framebuffer = Renderer.getInstance().getSwapChain();
       } else {
-         // VulkanBoost: no swapchain images (minimized window). The off-screen stand-in must have the size MainTarget
+         // VulkanMod Turbo: no swapchain images (minimized window). The off-screen stand-in must have the size MainTarget
          // still reports (last non-zero framebuffer size): mods such as Skyboxify build render areas from
          // RenderTarget.width/height, and a 10x10 stand-in made createRenderPass throw "render area out of bounds".
          int w = 10, h = 10;
@@ -89,7 +89,7 @@ public class DefaultMainPass implements MainPass {
       Framebuffer framebuffer = this.mainFramebuffer;
       VulkanImage colorAttachment = framebuffer.getColorAttachment();
       if (framebuffer == Renderer.getInstance().getSwapChain() && colorAttachment.getCurrentLayout() != 2) {
-         // VulkanBoost: the transition out of PRESENT_SRC / UNDEFINED must wait for the image-available semaphore,
+         // VulkanMod Turbo: the transition out of PRESENT_SRC / UNDEFINED must wait for the image-available semaphore,
          // which the frame submit waits on at COLOR_ATTACHMENT_OUTPUT. The generic path used BOTTOM_OF_PIPE as source
          // stage, which in the first scope means "no stage": the transition (and the frame's first draws) could run
          // while the presentation engine was still reading the image. Invisible on fast GPUs; on slow ones (GTX 750 Ti,
@@ -102,7 +102,7 @@ public class DefaultMainPass implements MainPass {
 
       VulkanImage depthAttachment = framebuffer.getDepthAttachment();
       if (depthAttachment != null && depthAttachment.getCurrentLayout() == 3) {
-         // VulkanBoost: one depth image is shared by all frames in flight and the layout never changes, so no barrier
+         // VulkanMod Turbo: one depth image is shared by all frames in flight and the layout never changes, so no barrier
          // was recorded between frames: the next frame's depth clear / tests could overlap the previous frame's depth
          // tests on a slow GPU (geometry flashing through). Order them explicitly.
          VulkanImage.transitionLayout(stack, commandBuffer, depthAttachment, 3, 3,

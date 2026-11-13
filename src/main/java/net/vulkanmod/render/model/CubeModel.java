@@ -128,7 +128,7 @@ public class CubeModel {
       }
    }
 
-   // ---- VulkanBoost: flat, allocation-free render path -------------------------------------------------------------
+   // ---- VulkanMod Turbo: flat, allocation-free render path -------------------------------------------------------------
    // Corner positions, per-polygon corner indices / UVs / normals are flattened into primitive arrays once, so a cube is
    // transformed with plain float math on locals instead of 8 Vector3f.mulPosition calls through object graphs.
    private float[] cornerPos;      // 8 * xyz (already / 16)

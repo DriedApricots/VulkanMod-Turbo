@@ -5,7 +5,7 @@ import net.minecraft.server.ServerTickRateManager;
 import net.vulkanmod.Initializer;
 
 /**
- * VulkanBoost TPS compensation (original implementation).
+ * VulkanMod Turbo TPS compensation (original implementation).
  *
  * When the (integrated) server cannot keep its tick rate, every server tick covers more than one tick of real time.
  * Timers that are counted in server ticks (block breaking, eating, drawing a bow) then take longer in real time than

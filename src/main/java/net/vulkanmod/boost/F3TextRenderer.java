@@ -38,7 +38,7 @@ import org.joml.Matrix4f;
 import org.jspecify.annotations.Nullable;
 
 /**
- * VulkanBoost: the F3 text (often 60+ lines, thousands of glyph quads plus their backgrounds) was rebuilt from scratch
+ * VulkanMod Turbo: the F3 text (often 60+ lines, thousands of glyph quads plus their backgrounds) was rebuilt from scratch
  * every frame. It is now drawn into a texture only when its content changes (at most 20 times per second, see
  * DebugScreenOverlayM) and composited with a single quad in all other frames.
  * Uses vanilla's picture-in-picture path, so the result is blitted in the same GUI layer the F3 text used to occupy.
@@ -54,7 +54,7 @@ public final class F3TextRenderer extends PictureInPictureRenderer<F3TextRendere
    public static volatile boolean active;
 
    private final Projection projection = new Projection();
-   private final ProjectionMatrixBuffer projectionBuffer = new ProjectionMatrixBuffer("VulkanMod+ F3");
+   private final ProjectionMatrixBuffer projectionBuffer = new ProjectionMatrixBuffer("VulkanMod Turbo F3");
    private long renderedVersion = -1L;
 
    public F3TextRenderer() {
@@ -85,7 +85,7 @@ public final class F3TextRenderer extends PictureInPictureRenderer<F3TextRendere
 
    @Override
    protected String getTextureLabel() {
-      return "vulkanboost_f3";
+      return "vulkanmodturbo_f3";
    }
 
    @Override
@@ -136,7 +136,7 @@ public final class F3TextRenderer extends PictureInPictureRenderer<F3TextRendere
          GpuTextureView lightmap = Minecraft.getInstance().gameRenderer.lightmap();
 
          // 3) draw
-         try (RenderPass pass = device.createCommandEncoder().createRenderPass(() -> "VulkanMod+ F3 text", target, Optional.empty(), null, OptionalDouble.empty())) {
+         try (RenderPass pass = device.createCommandEncoder().createRenderPass(() -> "VulkanMod Turbo F3 text", target, Optional.empty(), null, OptionalDouble.empty())) {
             RenderSystem.bindDefaultUniforms(pass);
             pass.setUniform("DynamicTransforms", transforms);
             for (Batch b : batches) {
@@ -234,7 +234,7 @@ public final class F3TextRenderer extends PictureInPictureRenderer<F3TextRendere
 
          try (MeshData mesh = this.builder.buildOrThrow()) {
             this.indexCount = mesh.drawState().indexCount();
-            this.vertexBuffer = device.createBuffer(() -> "VulkanMod+ F3 vertices", GpuBuffer.USAGE_VERTEX, mesh.vertexBuffer());
+            this.vertexBuffer = device.createBuffer(() -> "VulkanMod Turbo F3 vertices", GpuBuffer.USAGE_VERTEX, mesh.vertexBuffer());
          }
       }
 

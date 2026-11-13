@@ -13,12 +13,12 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
 public class Initializer implements ClientModInitializer {
-   public static final Logger LOGGER = LogManager.getLogger("VulkanMod+");
+   public static final Logger LOGGER = LogManager.getLogger("VulkanMod Turbo");
    private static String VERSION;
    public static Config CONFIG;
 
    public void onInitializeClient() {
-      VERSION = ((ModContainer)FabricLoader.getInstance().getModContainer("vulkanmodplus").get()).getMetadata().getVersion().getFriendlyString();
+      VERSION = ((ModContainer)FabricLoader.getInstance().getModContainer("vulkanmodturbo").get()).getMetadata().getVersion().getFriendlyString();
       LOGGER.info("== VulkanMod ==");
       Path configPath = FabricLoader.getInstance().getConfigDir().resolve("vulkanmod_settings.json");
       CONFIG = loadConfig(configPath);
@@ -31,7 +31,7 @@ public class Initializer implements ClientModInitializer {
       } catch (Throwable t) {
          LOGGER.warn("Could not register the cached F3 text renderer, F3 stays on the vanilla path", t);
       }
-      // VulkanBoost: upstream update check disabled (it would offer upstream VulkanMod builds instead of this fork)
+      // VulkanMod Turbo: upstream update check disabled (it would offer upstream VulkanMod builds instead of this fork)
    }
 
    private static Config loadConfig(Path path) {
@@ -40,7 +40,7 @@ public class Initializer implements ClientModInitializer {
 
    /**
     * 26.2 Fabric Renderer API submits "extended" block models / items as feature submits. Their FeatureRenderers are
-    * registered by Indigo only when Indigo is the active renderer, so with VulkanBoost nothing handled them and the game
+    * registered by Indigo only when Indigo is the active renderer, so with VulkanMod Turbo nothing handled them and the game
     * crashed ("No FeatureRenderer for type Extended Block Model", e.g. block entities with FRAPI models).
     * Indigo's renderers draw through vanilla RenderTypes (served by our Vulkan backend), so we register them ourselves.
     */

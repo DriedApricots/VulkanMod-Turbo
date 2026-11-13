@@ -17,7 +17,7 @@ import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 
-/** VulkanBoost Extra: master particle switch, per-type switches and a particle render distance. */
+/** VulkanMod Turbo Extra: master particle switch, per-type switches and a particle render distance. */
 @Mixin(ParticleEngine.class)
 public abstract class ParticleEngineExtraM {
    @Inject(method = "createParticle", at = @At("HEAD"), cancellable = true)

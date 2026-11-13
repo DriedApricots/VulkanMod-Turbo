@@ -154,7 +154,7 @@ public class Vulkan {
       try {
          VkApplicationInfo appInfo = VkApplicationInfo.calloc(stack);
          appInfo.sType(0);
-         appInfo.pApplicationName(stack.UTF8Safe("VulkanMod+"));
+         appInfo.pApplicationName(stack.UTF8Safe("VulkanMod Turbo"));
          appInfo.applicationVersion(VK10.VK_MAKE_VERSION(1, 0, 0));
          appInfo.pEngineName(stack.UTF8Safe("VulkanMod Engine"));
          appInfo.engineVersion(VK10.VK_MAKE_VERSION(1, 0, 0));

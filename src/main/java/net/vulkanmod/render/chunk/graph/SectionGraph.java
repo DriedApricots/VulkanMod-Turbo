@@ -178,7 +178,7 @@ public class SectionGraph {
       for (int i = 0; i < this.rebuildQueue.size(); i++) {
          RenderSection section = this.rebuildQueue.get(i);
          Vector3d cameraPos = WorldRenderer.getCameraPos();
-         // VulkanBoost: the dirty flag used to be cleared even when no task could be created (neighbour chunks not
+         // VulkanMod Turbo: the dirty flag used to be cleared even when no task could be created (neighbour chunks not
          // render-ready yet, e.g. right after a teleport / while chunks stream in). The change was then lost and the
          // section stayed stale (missing or ghost blocks) until something dirtied it again. Keep it dirty and retry.
          if (section.rebuildChunkAsync(this.taskDispatcher, this.renderRegionCache, cameraPos)) {
@@ -191,7 +191,7 @@ public class SectionGraph {
       this.rebuildQueue.clear();
    }
 
-   /** VulkanBoost: retries rebuilds that could not be scheduled yet; called every frame (cheap: usually empty). */
+   /** VulkanMod Turbo: retries rebuilds that could not be scheduled yet; called every frame (cheap: usually empty). */
    public void retryPendingRebuilds() {
       if (this.pendingRebuilds.isEmpty()) {
          return;

@@ -44,7 +44,7 @@ public abstract class ModelPartM {
       if (useFastFormat) {
          color = ColorUtil.RGBA.fromArgb32(color);
 
-         // VulkanBoost: flat float path (see CubeModel.renderFast)
+         // VulkanMod Turbo: flat float path (see CubeModel.renderFast)
          for (int i = 0, n = this.cubes.size(); i < n; i++) {
             ((ModelPartCubeMixed)this.cubes.get(i)).getCubeModel().renderFast(matrix4f, matrix3f, vertexBuilder, color, overlay, light);
          }

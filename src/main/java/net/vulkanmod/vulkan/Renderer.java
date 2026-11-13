@@ -264,7 +264,7 @@ public class Renderer {
       this.noteCompleted(currentFrame);
       p.pop();
       p.push("Acquire");
-      // VulkanBoost: acquire before anything of this frame is set up, so an out-of-date swapchain can be rebuilt here
+      // VulkanMod Turbo: acquire before anything of this frame is set up, so an out-of-date swapchain can be rebuilt here
       this.acquireSwapChainImage();
       p.pop();
       p.push("Begin_rendering");
@@ -522,7 +522,7 @@ public class Renderer {
       }
    }
 
-   /** VulkanBoost: true while the main pass renders off-screen because no swapchain image could be acquired. */
+   /** VulkanMod Turbo: true while the main pass renders off-screen because no swapchain image could be acquired. */
    private static boolean forceOffscreen;
 
    public static boolean isForceOffscreen() {
@@ -530,7 +530,7 @@ public class Renderer {
    }
 
    /**
-    * VulkanBoost: acquires the next swapchain image. The old code used the returned index even when the acquire failed
+    * VulkanMod Turbo: acquires the next swapchain image. The old code used the returned index even when the acquire failed
     * (VK_ERROR_OUT_OF_DATE_KHR on resize / fullscreen toggle / minimize): the index was garbage ("Index 512 out of
     * bounds for length 3") and the frame waited on a semaphore that was never signalled (VK_ERROR_DEVICE_LOST).
     * Now an out-of-date swapchain is rebuilt right away and the acquire retried; if that keeps failing (window still
@@ -617,7 +617,7 @@ public class Renderer {
    }
 
    /**
-    * VulkanBoost: starts the frame if it was not started yet. beginFrame may recreate the swapchain and the main pass
+    * VulkanMod Turbo: starts the frame if it was not started yet. beginFrame may recreate the swapchain and the main pass
     * (window minimized / resized), so callers must call this before reading the main framebuffer or render passes.
     */
    public void ensureFrameStarted() {
@@ -719,7 +719,7 @@ public class Renderer {
 
    private static int recreations;
 
-   // VulkanBoost: GPU progress for GpuFence (vanilla recycles vertex buffers / ring buffers once a fence completes).
+   // VulkanMod Turbo: GPU progress for GpuFence (vanilla recycles vertex buffers / ring buffers once a fence completes).
    // Every graphics-queue submission gets a serial; slotSerial[i] = serial of the last submission signalling
    // inFlightFences[i]. A fence signal also covers all earlier submissions on the queue.
    /** A texture animation update deferred from Minecraft.runTick (MinecraftMixin), run once the frame has begun. */
@@ -853,7 +853,7 @@ public class Renderer {
       }
    }
 
-   /** VulkanMod+: a pipeline was bound directly with vkCmdBindPipeline; the next bindGraphicsPipeline must rebind. */
+   /** VulkanMod Turbo: a pipeline was bound directly with vkCmdBindPipeline; the next bindGraphicsPipeline must rebind. */
    public void resetBoundPipeline() {
       this.boundPipelineHandle = 0L;
       this.boundPipeline = null;

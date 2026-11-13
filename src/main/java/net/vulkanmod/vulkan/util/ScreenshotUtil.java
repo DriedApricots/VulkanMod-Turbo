@@ -36,7 +36,7 @@ public abstract class ScreenshotUtil {
             int size = mipLevel * mipLevel;
 
             if (mipLevel == 1) {
-               // VulkanBoost: raw memory pass instead of getInt/setPixelABGR per pixel (330 ms -> a few ms at 1440p,
+               // VulkanMod Turbo: raw memory pass instead of getInt/setPixelABGR per pixel (330 ms -> a few ms at 1440p,
                // the F2 freeze). RGBA bytes read as a little-endian int are already ABGR, like NativeImage stores them.
                long src = org.lwjgl.system.MemoryUtil.memAddress(readView.data());
                long dst = nativeImage.getPointer();

@@ -24,7 +24,7 @@ import org.joml.Matrix4f;
 import org.joml.Matrix4fStack;
 
 /**
- * VulkanBoost: sign text was laid out and turned into glyph quads for every sign every frame. Sign text only changes
+ * VulkanMod Turbo: sign text was laid out and turned into glyph quads for every sign every frame. Sign text only changes
  * when its content, colour, glow, outline visibility (glow ink, &lt; 16 blocks), light or the font changes, so every
  * line is baked once per chunk section into GPU buffers and drawn with vanilla's own text render types, at the same
  * point of the frame where vanilla draws world text. All those inputs are part of a per-line signature that is compared
@@ -163,7 +163,7 @@ public final class StaticSignText {
                MeshData mesh = entry.getValue().build();
                if (mesh != null) {
                   try (mesh) {
-                     GpuBuffer buffer = RenderSystem.getDevice().createBuffer(() -> "VulkanMod+ sign text", GpuBuffer.USAGE_VERTEX, mesh.vertexBuffer());
+                     GpuBuffer buffer = RenderSystem.getDevice().createBuffer(() -> "VulkanMod Turbo sign text", GpuBuffer.USAGE_VERTEX, mesh.vertexBuffer());
                      this.batches.add(new Batch(entry.getKey(), buffer, mesh.drawState().indexCount()));
                   }
                }

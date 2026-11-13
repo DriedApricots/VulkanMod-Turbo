@@ -221,7 +221,7 @@ public abstract class DeviceManager {
          deviceFeatures.features().samplerAnisotropy(device.availableFeatures.features().samplerAnisotropy());
          deviceFeatures.features().logicOp(device.availableFeatures.features().logicOp());
          deviceFeatures.features().multiDrawIndirect(device.isDrawIndirectSupported());
-         // VulkanMod+: GPU occlusion culling marks visible sections from a fragment shader
+         // VulkanMod Turbo: GPU occlusion culling marks visible sections from a fragment shader
          deviceFeatures.features().fragmentStoresAndAtomics(device.availableFeatures.features().fragmentStoresAndAtomics());
          if (device.availableFeatures.features().wideLines()) {
             deviceFeatures.features().wideLines(true);

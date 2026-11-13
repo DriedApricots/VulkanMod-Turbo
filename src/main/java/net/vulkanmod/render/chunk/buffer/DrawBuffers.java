@@ -309,7 +309,7 @@ public class DrawBuffers {
    }
 
    /**
-    * VulkanMod+ GPU occlusion culling: writes the indirect commands of this area for one layer at ptr, like
+    * VulkanMod Turbo GPU occlusion culling: writes the indirect commands of this area for one layer at ptr, like
     * buildDrawBatchesIndirect, and stores the global section id (+ flags) in the unused bytes 20..23 of each command.
     * forceRadius: sections whose box (grown by it) contains the camera are never culled.
     * Returns the number of commands written.

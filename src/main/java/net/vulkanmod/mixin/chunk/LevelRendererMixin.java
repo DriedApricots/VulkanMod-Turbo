@@ -175,7 +175,7 @@ public abstract class LevelRendererMixin {
       }
    }
 
-   /** VulkanBoost: closed chests baked per section (StaticChests), drawn right before vanilla's solid features. */
+   /** VulkanMod Turbo: closed chests baked per section (StaticChests), drawn right before vanilla's solid features. */
    @Inject(
       method = "lambda$addMainPass$0",
       at = @At(value = "INVOKE", target = "Lnet/minecraft/client/renderer/feature/FeatureRenderDispatcher$PreparedFrame;executeSolid()V")

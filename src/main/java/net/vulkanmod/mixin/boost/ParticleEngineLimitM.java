@@ -14,7 +14,7 @@ import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 
-/** VulkanBoost option "Particle Limit" (default off): new particles are dropped while the limit is reached. */
+/** VulkanMod Turbo option "Particle Limit" (default off): new particles are dropped while the limit is reached. */
 @Mixin(ParticleEngine.class)
 public abstract class ParticleEngineLimitM {
    @Shadow @Final private Map<ParticleRenderType, ParticleGroup<?>> particles;

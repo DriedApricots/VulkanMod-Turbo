@@ -9,7 +9,7 @@ import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 
 /**
- * VulkanBoost TPS compensation for block breaking. In vanilla 26.2, ServerPlayerGameMode.gameTicks is only used to
+ * VulkanMod Turbo TPS compensation for block breaking. In vanilla 26.2, ServerPlayerGameMode.gameTicks is only used to
  * time block destruction (ticks spent destroying = gameTicks - start). Advancing it by the measured lag makes the
  * server's breaking time follow real time, so it accepts blocks the client finished breaking instead of reverting them.
  */

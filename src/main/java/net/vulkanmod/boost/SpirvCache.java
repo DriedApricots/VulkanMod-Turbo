@@ -23,7 +23,7 @@ public final class SpirvCache {
 
    private static Path dir() {
       if (dir == null) {
-         dir = FabricLoader.getInstance().getGameDir().resolve("vulkanmodplus-cache").resolve("spirv");
+         dir = FabricLoader.getInstance().getGameDir().resolve("vulkanmodturbo-cache").resolve("spirv");
       }
       return dir;
    }

@@ -100,7 +100,7 @@ public class TerrainBuilder {
 
       int vertexCount = this.quadSorter.getVertexCount();
       int indexCount = vertexCount / 4 * 6;
-      // VulkanBoost: terrain index buffers are always 16-bit (VulkanMod's terrain path reads 2-byte indices). This used to come
+      // VulkanMod Turbo: terrain index buffers are always 16-bit (VulkanMod's terrain path reads 2-byte indices). This used to come
       // from a global IndexType.least() overwrite, which also broke vanilla draws with > 65536 vertices (see mixins.json).
       IndexType indexType = IndexType.SHORT;
       boolean sequentialIndexing;

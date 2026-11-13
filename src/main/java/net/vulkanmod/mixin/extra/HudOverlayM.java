@@ -12,7 +12,7 @@ import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 
-/** VulkanBoost Extra: small FPS counter and coordinates in a screen corner, without opening F3. */
+/** VulkanMod Turbo Extra: small FPS counter and coordinates in a screen corner, without opening F3. */
 @Mixin(Hud.class)
 public abstract class HudOverlayM {
    @Inject(method = "extractRenderState", at = @At("TAIL"))

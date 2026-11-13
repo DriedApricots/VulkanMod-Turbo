@@ -14,11 +14,11 @@ public class Config {
    public int windowMode = 0;
    public int advCulling = 2;
    public boolean indirectDraw = true;
-   public boolean gpuOcclusionCulling = true;   // VulkanMod+: Nvidium-style GPU occlusion culling of sections
+   public boolean gpuOcclusionCulling = true;   // VulkanMod Turbo: Nvidium-style GPU occlusion culling of sections
    public boolean uniqueOpaqueLayer = true;
    public boolean entityCulling = true;
-   public boolean tpsCompensation = true;   // VulkanBoost: lag compensation for block breaking / item use (singleplayer)
-   // VulkanBoost invisible optimizations (no visual change; kept switchable for A/B benchmarks and as a safety valve)
+   public boolean tpsCompensation = true;   // VulkanMod Turbo: lag compensation for block breaking / item use (singleplayer)
+   // VulkanMod Turbo invisible optimizations (no visual change; kept switchable for A/B benchmarks and as a safety valve)
    public boolean particleLightCache = true;
    public boolean fastTranslucentSort = true;
    public boolean textLayoutCache = true;
@@ -26,11 +26,11 @@ public class Config {
    public boolean staticChests = true;
    public boolean staticSignText = true;
    public boolean spirvCache = true;
-   // VulkanBoost visible trade-offs (0 = off / vanilla)
+   // VulkanMod Turbo visible trade-offs (0 = off / vanilla)
    public int particleLimit = 0;          // max live particles
    public int itemRenderDistance = 0;     // blocks, dropped items
    public int mobRenderDistance = 0;      // blocks, mobs/animals (players, bosses, glowing and named entities always drawn)
-   // VulkanBoost "Extra" settings (Sodium Extra style). Defaults = vanilla behaviour.
+   // VulkanMod Turbo "Extra" settings (Sodium Extra style). Defaults = vanilla behaviour.
    // Animations
    public boolean animWater = true;
    public boolean animLava = true;
