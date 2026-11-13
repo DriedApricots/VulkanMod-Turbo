@@ -1,10 +1,10 @@
 # VulkanMod+
 
-An unofficial fork of [VulkanMod](https://github.com/xCollateral/VulkanMod) by **Collateral** for Minecraft **26.2** (Fabric):
+An unofficial fork of [VulkanMod](https://github.com/xCollateral/VulkanMod) by **Collateral** for new Minecraft versions (Fabric; 26.2 now, 26.3 in progress):
 the Vulkan renderer with extra optimizations, Sodium Extra style settings and bundled performance mods.
 Not affiliated with the VulkanMod project.
 
-A plain port of VulkanMod to 26.2 without these additions: [VulkanMod-Port](https://github.com/DriedApricots/VulkanMod-Port).
+A plain port of VulkanMod without these additions: [VulkanMod-Port](https://github.com/DriedApricots/VulkanMod-Port).
 
 ## What is added
 
@@ -40,7 +40,7 @@ Language Reload, ImmediatelyFast, Ixeris. See `src/main/resources/licenses/THIRD
 
 ## Requirements
 
-- Minecraft 26.2, Fabric Loader 0.17+
+- Minecraft 26.2 (26.3 in progress), Fabric Loader 0.17+
 - A GPU with Vulkan 1.2 support
 - Not compatible with Sodium, Iris or the plain VulkanMod
 
